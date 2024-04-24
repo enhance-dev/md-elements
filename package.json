@@ -1,0 +1,15 @@
+{
+  "name": "@enhance/md-elements",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@enhance/arc-plugin-enhance": "^11.0.0",
+    "arcdown": "^2.3.0"
+  },
+  "devDependencies": {
+    "@architect/architect": "^11.0.10"
+  }
+}
