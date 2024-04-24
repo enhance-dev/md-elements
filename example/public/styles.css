@@ -1,0 +1,31 @@
+:root {
+  --font-body: "Rasa", serif;
+  --font-headline: "Texturina", serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+}
+
+a {
+  color: darkred;
+  text-decoration: underline lightcoral;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.15em;
+}
+a:hover {
+  color: firebrick;
+  text-decoration: underline coral;
+  text-decoration-thickness: 0.15em;
+}
