@@ -17,7 +17,45 @@
 > This is in active development and not yet published.
 > We are internally reviewing how Markdown can work in Enhance.
 
-## `<md-render>`
+## `EnhanceMd()`
+
+The `EnhanceMd` function is used to register and render .md files on the server. The result should be added to the Enhance app store via `preflight.mjs` or an app/api/ function. Destructure the returned value or use the key `enhanceMd`.
+
+An example preflight.mjs file:
+
+```javascript
+import { join } from 'node:path'
+import { EnhanceMd } from '@enhance/md-elements'
+
+export default async function ({ req }) {
+  // set the root folder for .md to "/app/md"
+  const dir = join(import.meta.dirname, 'md')
+  // use the request path to find the .md file
+  const file = decodeURIComponent(req.path).concat('.md')
+
+  return {
+    ...await EnhanceMd({ dir, file }),
+  }
+}
+```
+
+## Elements
+
+### Setup
+
+Reference the provided elements in your Enhance application:
+
+`app/elements/md-render.mjs`:
+```js
+export { MdRender as default } from '@enhance/md-elements'
+```
+
+`app/elements/md-content.mjs`:
+```js
+export { MdContent as default } from '@enhance/md-elements'
+```
+
+### `<md-render>`
 
 Create a context frame for using a specific rendered .md file. Children `<md-content>` tags will use this context to include content like HTML and frontmatter from the file.
 
@@ -28,7 +66,7 @@ Create a context frame for using a specific rendered .md file. Children `<md-con
 ```
 
 
-### `file=`
+#### `file=`
 
 Optional specifier for the rendered file. If not provided, the first file registered with `EnhanceMd` will be used.
 
@@ -38,7 +76,7 @@ Optional specifier for the rendered file. If not provided, the first file regist
 </md-render>
 ```
 
-## `<md-content>`
+### `<md-content>`
 
 Include rendered content from a specific part of the .md file. Specify part or frontmatter with attributes.
 
@@ -57,7 +95,7 @@ Include rendered content from a specific part of the .md file. Specify part or f
 </md-render>
 ```
 
-### `part=`
+#### `part=`
 
 The four return values from Arcdown can be used as "parts":
 
@@ -66,6 +104,6 @@ The four return values from Arcdown can be used as "parts":
 1. `slug` generated slug
 1. `toc-html` table of contents
 
-### `frontmatter=`
+#### `frontmatter=`
 
 Additionally any frontmatter can be accessed with `frontmatter=`

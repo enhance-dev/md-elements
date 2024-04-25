@@ -6,10 +6,11 @@ export { MdRender, MdContent } from './elements/index.js'
 export const arcdown = new Arcdown()
 
 /** @typedef {{ dir: string, file: string }} EnhanceMdEntry */
+/** @typedef {{ html: string, tocHtml: string, title?: string, slug?: string }} RenderResult */
 
 /**
  * @param {EnhanceMdEntry | Array<EnhanceMdEntry>} entries
- * @returns {Promise<{ enhanceMd: object }>}
+ * @returns {Promise<{ enhanceMd: { [FileKey:string]: RenderResult | {error: error} } | object }>}
  */
 export async function EnhanceMd (entries, renderer = arcdown) {
   const enhanceMd = {}
@@ -25,7 +26,7 @@ export async function EnhanceMd (entries, renderer = arcdown) {
       rendered = await renderer.render(mdFile)
     }
     catch (error) {
-      rendered = { error: error.message }
+      rendered = { error }
     }
 
     enhanceMd[file] = rendered
