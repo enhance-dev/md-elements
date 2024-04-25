@@ -1,3 +1,10 @@
+---
+title: "Languages of Middle-earth"
+subtitle: "Constructing Tolkien's Linguistic Landscape"
+author: "Eärendil the Mariner"
+date: "2 Yule, Shire Reckoning 1419"
+---
+
 # Languages of Middle-earth: Constructing Tolkien's Linguistic Landscape
 
 ## Tolkien’s Linguistic Innovation

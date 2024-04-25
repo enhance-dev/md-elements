@@ -3,14 +3,15 @@ import { join } from 'node:path'
 import { EnhanceMd } from '@enhance/md-elements'
 
 export default async function ({ req }) {
-  const articleList = await readdirSync(join(import.meta.dirname, 'md'))
+  const dir = join(import.meta.dirname, 'md')
+  const articleList = await readdirSync(dir)
 
-  const fileName = req.path === '/'
+  const file = req.path === '/'
     ? articleList[0]
     : decodeURIComponent(req.path).replace('/', '').concat('.md')
 
   const articles = articleList.map(a => {
-    const active = a === fileName
+    const active = a === file
     const article = a.replace('.md', '')
 
     return {
@@ -22,10 +23,7 @@ export default async function ({ req }) {
 
   return {
     articles,
-    fileName,
-    ...await EnhanceMd({
-      dir: join(import.meta.dirname, 'md'),
-      file: fileName,
-    }),
+    fileName: file,
+    ...await EnhanceMd({ dir, file }),
   }
 }

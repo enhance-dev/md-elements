@@ -3,6 +3,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --fix",
     "test": "node --test"
   },
   "dependencies": {
@@ -10,6 +11,7 @@
     "arcdown": "^2.3.0"
   },
   "devDependencies": {
-    "@architect/architect": "^11.0.10"
+    "@architect/eslint-config": "^3.0.0-RC.4",
+    "eslint": "^9.1.1"
   }
 }

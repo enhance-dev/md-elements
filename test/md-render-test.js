@@ -11,7 +11,7 @@ test('MdRender', () => {
   const emptyState = {
     attrs: {},
     context: {},
-    store: {}
+    store: {},
   }
 
   const stateWithFile = {
@@ -19,9 +19,9 @@ test('MdRender', () => {
     store: {
       enhanceMd: {
         'file.md': { html: '<p>hello world</p>' },
-        'error.md': { error: new Error('fake error') }
-      }
-    }
+        'error.md': { error: new Error('fake error') },
+      },
+    },
   }
 
   const emptyStateResult = MdRender({ html, state: emptyState })
@@ -29,19 +29,19 @@ test('MdRender', () => {
 
   const badFileKeyResult = MdRender({
     html,
-    state: { ...stateWithFile, attrs: { file: 'bad.md' } }
+    state: { ...stateWithFile, attrs: { file: 'bad.md' } },
   })
   assert.strictEqual(badFileKeyResult, '')
 
   const errorFileResult = MdRender({
     html,
-    state: { ...stateWithFile, attrs: { file: 'error.md' } }
+    state: { ...stateWithFile, attrs: { file: 'error.md' } },
   })
   assert.strictEqual(errorFileResult, '')
 
   const goodFileResult = MdRender({
     html,
-    state: { ...stateWithFile, attrs: { file: 'file.md' } }
+    state: { ...stateWithFile, attrs: { file: 'file.md' } },
   })
   assert.strictEqual(goodFileResult, '<slot></slot>')
 

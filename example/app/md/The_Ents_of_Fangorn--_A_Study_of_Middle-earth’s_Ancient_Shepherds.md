@@ -1,3 +1,10 @@
+---
+title: "The Ents of Fangorn"
+subtitle: "A Study of Middle-earth’s Ancient Shepherds"
+author: "Ithilien of the Moon"
+date: "6 Lothron, Third Age 2980"
+---
+
 # The Ents of Fangorn: A Study of Middle-earth’s Ancient Shepherds
 
 ## Origins and Role of the Ents

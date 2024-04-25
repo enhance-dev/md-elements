@@ -1,3 +1,10 @@
+---
+title: "The Silmarils and the Oath of Fëanor"
+subtitle: "Catalysts of the First Age"
+author: "Anárion of Gondor"
+date: "25 Rethe, Third Age 3019"
+---
+
 # The Silmarils and the Oath of Fëanor: Catalysts of the First Age
 
 ## Creation of the Silmarils

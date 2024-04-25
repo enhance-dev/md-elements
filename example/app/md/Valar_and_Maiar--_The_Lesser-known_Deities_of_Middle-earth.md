@@ -1,3 +1,10 @@
+---
+title: "Valar and Maiar"
+subtitle: "The Lesser-known Deities of Middle-earth"
+author: "Mithrandir"
+date: "Mid-year's Day, Fourth Age 10"
+---
+
 # Valar and Maiar: The Lesser-known Deities of Middle-earth
 
 ## Understanding the Valar and Maiar

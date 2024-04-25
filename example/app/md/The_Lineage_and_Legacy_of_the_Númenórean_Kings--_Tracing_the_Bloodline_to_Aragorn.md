@@ -1,3 +1,10 @@
+---
+title: "The Lineage and Legacy of the Númenórean Kings"
+subtitle: "Tracing the Bloodline to Aragorn"
+author: "Finrod Felagund"
+date: "14 Forelithe, Shire Reckoning 1380"
+---
+
 # The Lineage and Legacy of the Númenórean Kings: Tracing the Bloodline to Aragorn
 
 > "He is Aragorn son of Arathorn, and he is descended through many fathers from Isildur Elendil’s son of Minas Ithil. He is the Chief of the Dúnedain in the North, and few are now left of that folk."

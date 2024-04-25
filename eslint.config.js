@@ -1,9 +1,12 @@
 import arc from '@architect/eslint-config'
 
-module.exports = [
+export default [
   ...arc,
   {
-    sourceType: 'module',
+    files: [ '**/*.js' ],
+    languageOptions: {
+      sourceType: 'module',
+    },
     ignores: [
       'node_modules/',
     ],

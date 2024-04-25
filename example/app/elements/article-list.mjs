@@ -1,4 +1,4 @@
-export default function ({ html, state: {store} }) {
+export default function ({ html, state: { store } }) {
   const { articles } = store
 
   return html`
@@ -37,16 +37,17 @@ export default function ({ html, state: {store} }) {
     <aside>
       <h2>Disquisitions</h2>
       ${articles.map(article => {
-        const [one, two] = article.title.split(':')
-        return html`
+    const [ one, two ] = article.title.split(':')
+    return html`
           <a
             class="${article.active ? 'active' : ''}"
             href="/${article.link}"
           >
-            <strong>${one}:</strong>${two}
+            <strong>${one}</strong><br>
+            ${two}
           </a>
         `
-      }).join('')}
+  }).join('')}
     </aside>
   `
 }

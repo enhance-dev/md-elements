@@ -23,16 +23,24 @@ export default function ({ html, state: { store } }) {
         padding-left: 1rem;
         border-left: 5px solid silver;
       }
+      article h1 {
+        display: none;
+      }
     </style>
 
     <md-render file="${fileName}">
-      <md-content frontmatter="author"></md-content>
-      <md-content frontmatter="date"></md-content>
+      <h1><md-content part="title"></md-content></h1>
+      <h2><md-content frontmatter="subtitle"></md-content></h2>
+      <p>
+        <md-content frontmatter="author"></md-content><br>
+        <md-content frontmatter="date"></md-content>
+      </p>
       <md-content part="toc-html"></md-content>
-      <slot></slot>
       <article>
         <md-content part="html"></md-content>
       </article>
+      <slot></slot>
     </md-render>
+
   `
 }
