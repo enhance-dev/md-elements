@@ -3,7 +3,6 @@ import { EnhanceMd } from '@enhance/md-elements'
 
 export async function get () {
   const dir = join(import.meta.dirname, '..', 'md')
-  console.log('dir', dir)
 
   return {
     json: {
