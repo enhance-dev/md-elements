@@ -8,14 +8,12 @@ export default function AboutContent ({ html, state: { store } }) {
     margin-bottom: 2rem;
   }
   section small {
-    display: block;
-    margin: 0.5rem 0;
-    background-color: #f7f7f7;
+    padding: 0.25rem 0.4rem;
+    background-color: #666;
+    color: white;
   }
   section code {
-    background-color: #f7f7f7;
-    padding: 0.1rem 0.3rem;
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
   section blockquote {
     border-left: 3px solid #eee;
