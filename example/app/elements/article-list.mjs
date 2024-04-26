@@ -48,6 +48,8 @@ export default function ({ html, state: { store } }) {
           </a>
         `
   }).join('')}
+      <h3>More</h3>
+      <a href="/about">About</a>
     </aside>
   `
 }

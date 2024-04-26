@@ -18,17 +18,19 @@ const renderCache = new Map()
  * }>}
  */
 export async function EnhanceMd (dir, entries, renderer = arcdown) {
-  const files = await readdirSync(dir)
-  const enhanceMdFiles = files.map(f => {
+  const files = readdirSync(dir)
+  const enhanceMdFiles = []
+  for (const f of files) {
+    if (!f.endsWith('.md')) continue
     const file = f.replace('.md', '')
 
-    return {
+    enhanceMdFiles.push({
       file: path.join(dir, f),
       title: file.replaceAll('--', ':').replaceAll('_', ' '),
       link: encodeURIComponent(file),
       active: false,
-    }
-  })
+    })
+  }
 
   const enhanceMd = {}
   if (entries) {
