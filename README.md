@@ -47,13 +47,12 @@ export default async function ({ req }) {
 
 #### Parameters
 
-##### `dir`
+##### `dir: string`
+The root folder for .md files. The path should be absolute.
 
-`string` - The root folder for .md files. The path should be absolute.
-
-##### `file`
-
-`string | string[]` (optional) - The name(s) of the .md file(s) to render. The path(s) (if any) should be relative to `dir`.
+##### `file: string | string[]` (optional)
+The name(s) of the .md file(s) to render.  
+The path(s) (if any) should be relative to `dir`.
 
 #### Returns
 
