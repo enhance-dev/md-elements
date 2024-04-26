@@ -1,6 +1,4 @@
-export default function ({ html, state: { store } }) {
-  const { fileName } = store
-
+export default function ({ html }) {
   return html`
     <style>
       div.author, div.date {
@@ -28,7 +26,7 @@ export default function ({ html, state: { store } }) {
       }
     </style>
 
-    <md-render file="${fileName}">
+    <md-render>
       <h1><md-content part="title"></md-content></h1>
       <h2><md-content frontmatter="subtitle"></md-content></h2>
       <p>

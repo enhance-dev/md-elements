@@ -1,5 +1,5 @@
 export default function ({ html, state: { store } }) {
-  const { articles } = store
+  const { enhanceMdFiles } = store
 
   return html`
     <style>
@@ -36,7 +36,7 @@ export default function ({ html, state: { store } }) {
 
     <aside>
       <h2>Disquisitions</h2>
-      ${articles.map(article => {
+      ${enhanceMdFiles.map(article => {
     const [ one, two ] = article.title.split(':')
     return html`
           <a
